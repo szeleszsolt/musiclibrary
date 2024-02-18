@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,10 +26,36 @@ namespace musiclibraryprog
             InitializeComponent();
         }
 
+        private const string MusicDbList = "musics.csv";
+
         private void MusicPlus(object sender, RoutedEventArgs e)
         {
             MusicEditorWindow window = new MusicEditorWindow();
+            if (window.ShowDialog() == true)
+            {
+                MusicList.Items.Add(window.Music);
+            }
+        }
+
+        private void MusicDelete(object sender, RoutedEventArgs e)
+        {
+            MusicList.Items.Remove(MusicList.SelectedItem);
+        }
+
+        private void MusicEditor(object sender, RoutedEventArgs e)
+        {
+            MusicEditorWindow window = new MusicEditorWindow();
+            window.Music = (Music)MusicList.SelectedItem;
             window.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            String[] lines = File.ReadAllLines(MusicDbList);
+            foreach (String line in lines)
+            {
+                Music music = Music.FromCsv(line);
+            }
         }
     }
 }

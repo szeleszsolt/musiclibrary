@@ -28,7 +28,23 @@ namespace musiclibraryprog
         private void MentesClick(object sender, RoutedEventArgs e)
         {
             Music = new Music();
+            Music.Title = SongTitle.Text;
+            Music.Artist = SongArtist.Text;
+            Music.Release = (DateTime)ReleaseDate.SelectedDate;
+            Music.Style = SongStyle.Text;
+            DialogResult = true;
+            Close();
+        }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Music != null)
+            {
+                SongTitle.Text = Music.Title;
+                SongArtist.Text = Music.Artist;
+                ReleaseDate.SelectedDate = Music.Release;
+                SongStyle.Text = Music.Style;
+            }
         }
     }
 }

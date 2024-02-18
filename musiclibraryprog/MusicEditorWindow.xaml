@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:musiclibraryprog"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MusicEditorWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
