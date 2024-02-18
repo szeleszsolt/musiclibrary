@@ -34,22 +34,22 @@ namespace musiclibraryprog
             if (window.ShowDialog() == true)
             {
                 MusicList.Items.Add(window.Music);
-                Save();
+                Save(); /*Változtatás után mentés*/
             }
         }
 
         private void MusicDelete(object sender, RoutedEventArgs e)
         {
-            MusicList.Items.Remove(MusicList.SelectedItem);
-            Save();
+            MusicList.Items.Remove(MusicList.SelectedItem); /*A listboxban kiválasztott sort törli*/
+            Save(); /*Változtatás után mentés*/
         }
 
-        private void MusicEditor(object sender, RoutedEventArgs e)
+        private void MusicEditor(object sender, RoutedEventArgs e) /*A MusicEditor gomb click eseménykezelője*/
         {
-            MusicEditorWindow window = new MusicEditorWindow();
+            MusicEditorWindow window = new MusicEditorWindow(); /*Példányosítunk*/
             window.Music = (Music)MusicList.SelectedItem;
             window.ShowDialog();
-            Save();
+            Save(); /*Változtatás után mentés*/
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

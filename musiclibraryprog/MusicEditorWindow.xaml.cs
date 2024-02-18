@@ -30,13 +30,13 @@ namespace musiclibraryprog
             Music = new Music();
             Music.Title = SongTitle.Text;
             Music.Artist = SongArtist.Text;
-            Music.Release = (DateTime)ReleaseDate.SelectedDate;
+            Music.Release = (DateTime)ReleaseDate.SelectedDate; /*Csak így hajlandó elfogatni.*/
             Music.Style = SongStyle.Text;
             DialogResult = true;
             Close();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e) /*Valamiért nem működik*/
         {
             if (Music != null)
             {

@@ -13,7 +13,7 @@ namespace musiclibraryprog
         public DateTime Release { get; set; }
         public string? Style { get; set; }
 
-        internal static Music FromCsv(string line)
+        internal static Music FromCsv(string line) 
         {
             String[] splits = line.Split('|');
             Music music = new Music();

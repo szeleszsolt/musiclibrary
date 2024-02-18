@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:musiclibraryprog"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MusicEditorWindow" Height="450" Width="800">
+        Title="MusicEditorWindow" MinHeight="250" Height="450" MinWidth="250" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

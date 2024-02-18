@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:musiclibraryprog"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" MinHeight="250" Height="450" MinWidth="250"  Width="800"> <!--Minimumok beállítása-->
+    <Grid> <!--Reszponzív oldalt akarunk, tehát nem húzzuk be a vezérlőket-->
         <Grid.RowDefinitions>
             <RowDefinition Height=" auto"/> <!--Arányokra osztja a Gridet. Ha auto, akkor szövegmérettel egyenlő a sáv.-->
             <RowDefinition Height=" *"/> <!--Ha csak * van, akkor kitöltia rendelkezésre álló helyet.-->
@@ -24,12 +24,13 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Click="MusicPlus">
-                Hozzáadás
+                Hozzáadás <!--Ha contentként állítom be, pofázik érte ... talán extension hiba.-->
             </Button>
-            <Button Grid.Column="1" Click="MusicEditor">
+            <Button Grid.Column="1" Click="MusicEditor"> <!--Ha megírtuk a click-et, akkor F12 után megírni a vezérlőt-->
                 Szerkesztés
             </Button>
             <Button  Grid.Column="2" Click="MusicDelete">
+                <!--Ha megírtuk a click-et, akkor F12 után megírni a vezérlőt-->
                 Eltávolítás
             </Button>
         </Grid>
