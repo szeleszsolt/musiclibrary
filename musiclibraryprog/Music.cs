@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace musiclibraryprog
 {
-    internal class Music
+    public class Music
     {
         public string? Title { get; set; }
         public string? Artist { get; set; }

@@ -23,5 +23,12 @@ namespace musiclibraryprog
         {
             InitializeComponent();
         }
+
+        public Music? Music { get; set; }
+        private void MentesClick(object sender, RoutedEventArgs e)
+        {
+            Music = new Music();
+
+        }
     }
 }
