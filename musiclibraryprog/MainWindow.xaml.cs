@@ -81,5 +81,11 @@ namespace musiclibraryprog
             }
             File.WriteAllLines(MusicDbList, op);
         }
+
+        private void MusicListChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BTNDel.IsEnabled = MusicList.SelectedItem != null;
+            BTNEdit.IsEnabled = MusicList.SelectedItem != null;
+        }
     }
 }

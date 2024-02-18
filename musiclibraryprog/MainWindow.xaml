@@ -16,7 +16,7 @@
         <TextBlock Grid.Row="0" HorizontalAlignment="Center">
             Zeneszámok
         </TextBlock>
-        <ListBox x:Name="MusicList" Grid.Row="1"/>
+        <ListBox x:Name="MusicList" Grid.Row="1" SelectionChanged="MusicListChanged"/>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/> <!--Egyforma szélességű lesz minden gomb.-->
@@ -26,10 +26,10 @@
             <Button Grid.Column="0" Click="MusicPlus">
                 Hozzáadás <!--Ha contentként állítom be, pofázik érte ... talán extension hiba.-->
             </Button>
-            <Button Grid.Column="1" Click="MusicEditor"> <!--Ha megírtuk a click-et, akkor F12 után megírni a vezérlőt-->
+            <Button  x:Name="BTNEdit" Grid.Column="1" Click="MusicEditor" IsEnabled="False"> <!--Ha megírtuk a click-et, akkor F12 után megírni a vezérlőt-->
                 Szerkesztés
             </Button>
-            <Button  Grid.Column="2" Click="MusicDelete">
+            <Button  x:Name="BTNDel" Grid.Column="2" Click="MusicDelete" IsEnabled="False"> <!--Az IsEnable - re hibát dob-->
                 <!--Ha megírtuk a click-et, akkor F12 után megírni a vezérlőt-->
                 Eltávolítás
             </Button>

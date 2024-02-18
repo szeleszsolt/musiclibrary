@@ -23,10 +23,10 @@
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Text="Előadó"/>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Text="Stílus"/>
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Text="Kiadás Dátuma"/>
-        <TextBox x:Name="SongTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
-        <TextBox x:Name="SongArtist" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-        <TextBox x:Name="SongStyle" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
-        <DatePicker x:Name="ReleaseDate" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Mentés" Click="MentesClick"/>
+        <TextBox x:Name="SongTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextChanged="Valtozas"/>
+        <TextBox x:Name="SongArtist" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" TextChanged="Valtozas"/>
+        <TextBox x:Name="SongStyle" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" TextChanged="Valtozas"/>
+        <DatePicker x:Name="ReleaseDate" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" SelectedDateChanged="Valtozas"/>
+        <Button x:Name="BTNSave" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Mentés" Click="MentesClick" IsEnabled="False"/>
     </Grid>
 </Window>

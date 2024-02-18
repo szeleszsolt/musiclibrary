@@ -46,5 +46,10 @@ namespace musiclibraryprog
                 SongStyle.Text = Music.Style;
             }
         }
+
+        private void Valtozas(object sender, TextChangedEventArgs e)
+        {
+            BTNSave.IsEnabled = !string.IsNullOrWhiteSpace(SongTitle.Text) && !string.IsNullOrWhiteSpace(SongArtist.Text) && !string.IsNullOrWhiteSpace(SongStyle.Text) && ReleaseDate.SelectedDate != null;
+        }
     }
 }
