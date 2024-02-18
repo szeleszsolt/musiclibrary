@@ -24,6 +24,11 @@ namespace musiclibraryprog
             return music;
         }
 
+        public string ToCsv()
+        {
+            return $"{Title}|{Artist}|{Style}|{Release}";
+        }
+
         public override string ToString()
         {
             return $"{Title} - {Artist} - {Release} - {Style}";

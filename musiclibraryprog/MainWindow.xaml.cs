@@ -34,12 +34,14 @@ namespace musiclibraryprog
             if (window.ShowDialog() == true)
             {
                 MusicList.Items.Add(window.Music);
+                Save();
             }
         }
 
         private void MusicDelete(object sender, RoutedEventArgs e)
         {
             MusicList.Items.Remove(MusicList.SelectedItem);
+            Save();
         }
 
         private void MusicEditor(object sender, RoutedEventArgs e)
@@ -47,15 +49,37 @@ namespace musiclibraryprog
             MusicEditorWindow window = new MusicEditorWindow();
             window.Music = (Music)MusicList.SelectedItem;
             window.ShowDialog();
+            Save();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            String[] lines = File.ReadAllLines(MusicDbList);
-            foreach (String line in lines)
+            if (File.Exists(MusicDbList))
             {
-                Music music = Music.FromCsv(line);
+                String[] lines = File.ReadAllLines(MusicDbList);
+                foreach (String line in lines)
+                {
+                    Music music = Music.FromCsv(line);
+                    MusicList.Items.Add(music);
+                }
+
+
             }
+            else
+            {
+                File.Create(MusicDbList);
+            }
+                
+        }
+
+        private void Save()
+        {
+            List<string> op = new List<string>();
+            foreach (Music item in MusicList.Items)
+            {
+                op.Add(item.ToCsv());
+            }
+            File.WriteAllLines(MusicDbList, op);
         }
     }
 }
